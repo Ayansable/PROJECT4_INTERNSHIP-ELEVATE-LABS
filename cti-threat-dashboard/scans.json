@@ -1,0 +1,38 @@
+[
+    {
+        "ip": "45.9.148.108",
+        "country": "NL",
+        "isp": "Nice IT Customers Network",
+        "status": "Safe"
+    },
+    {
+        "ip": "185.220.101.182",
+        "country": "DE",
+        "isp": "CIA TRIAD SECURITY LLC",
+        "status": "Malicious"
+    },
+    {
+        "ip": "5.188.206.26",
+        "country": "BG",
+        "isp": "VPS and Shared Hosting",
+        "status": "Safe"
+    },
+    {
+        "ip": "45.9.148.108",
+        "country": "NL",
+        "isp": "Nice IT Customers Network",
+        "status": "Safe"
+    },
+    {
+        "ip": "46.161.27.151",
+        "country": "NL",
+        "isp": "Petersburg Internet Network ltd.",
+        "status": "Malicious"
+    },
+    {
+        "ip": "91.219.236.222",
+        "country": "HU",
+        "isp": "ServerAstra Kft.",
+        "status": "Safe"
+    }
+]

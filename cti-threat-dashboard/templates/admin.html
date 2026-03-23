@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<style>
+
+body{
+background:#0a192f;
+font-family:Arial;
+color:white;
+text-align:center;
+}
+
+input{
+padding:10px;
+border-radius:5px;
+border:none;
+}
+
+button{
+padding:10px 20px;
+background:#ef4444;
+border:none;
+color:white;
+border-radius:5px;
+}
+
+table{
+margin:auto;
+margin-top:20px;
+border-collapse:collapse;
+}
+
+td,th{
+padding:10px 20px;
+border:1px solid white;
+}
+
+.delete{
+color:red;
+text-decoration:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>Admin Blacklist Panel</h2>
+
+<form action="/add_ip" method="POST">
+
+<input name="ip" placeholder="Add Malicious IP">
+
+<button>Add</button>
+
+</form>
+
+<table>
+
+<tr>
+
+<th>IP</th>
+<th>Status</th>
+<th>Action</th>
+
+</tr>
+
+{% for ip in blacklist %}
+
+<tr>
+
+<td>{{ip}}</td>
+
+<td style="color:red;">🚩 Malicious</td>
+
+<td><a class="delete" href="/delete_ip/{{ip}}">Delete</a></td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br>
+
+<a href="/logout">Logout</a>
+
+</body>
+
+</html>

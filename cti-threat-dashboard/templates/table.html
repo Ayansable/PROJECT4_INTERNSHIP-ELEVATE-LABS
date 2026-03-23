@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Database Table</title>
+
+<style>
+
+body{
+background: linear-gradient(to right,#141e30,#243b55);
+font-family: Arial;
+text-align: center;
+color: white;
+}
+
+table{
+margin: auto;
+border-collapse: collapse;
+background: white;
+color: black;
+}
+
+th,td{
+padding: 12px 20px;
+border: 1px solid gray;
+}
+
+th{
+background: #2a5298;
+color: white;
+}
+
+h2{
+margin-top: 40px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>Stored Threat Data</h2>
+
+<table>
+
+<tr>
+<th>ID</th>
+<th>IP</th>
+<th>Score</th>
+<th>Country</th>
+<th>Tag</th>
+</tr>
+
+{% for s in scans %}
+
+<tr>
+<td>{{ s.id }}</td>
+<td>{{ s.ip }}</td>
+<td>{{ s.score }}</td>
+<td>{{ s.country }}</td>
+<td>{{ s.tag }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br><br>
+
+<a href="/">Back</a>
+
+</body>
+
+</html>

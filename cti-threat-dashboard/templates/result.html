@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Scan Result</title>
+
+<style>
+
+body{
+background:#0a192f;
+font-family:Arial;
+color:white;
+margin:0;
+padding:0;
+text-align:center;
+}
+
+.container{
+margin-top:100px;
+background:#1e293b;
+width:400px;
+margin-left:auto;
+margin-right:auto;
+padding:30px;
+border-radius:10px;
+box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+
+h1{
+margin-bottom:20px;
+}
+
+p{
+font-size:18px;
+margin:10px 0;
+}
+
+.safe{
+color:#22c55e;
+font-size:30px;
+font-weight:bold;
+}
+
+.low{
+color:yellow;
+font-size:30px;
+font-weight:bold;
+}
+
+.suspicious{
+color:orange;
+font-size:30px;
+font-weight:bold;
+}
+
+.malicious{
+color:red;
+font-size:30px;
+font-weight:bold;
+}
+
+button{
+margin-top:20px;
+padding:10px 20px;
+background:#3b82f6;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#2563eb;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Scan Result</h1>
+
+<p><b>IP Address:</b> {{ip}}</p>
+<p><b>Country:</b> {{country}}</p>
+<p><b>ISP:</b> {{isp}}</p>
+<p><b>Threat Score:</b> {{score}}</p>
+
+<!-- STATUS DISPLAY -->
+
+{% if result == "Malicious" %}
+<p class="malicious">🚨 Malicious</p>
+
+{% elif result == "Suspicious" %}
+<p class="suspicious">⚠ Suspicious</p>
+
+{% elif result == "Low Risk" %}
+<p class="low">⚡ Low Risk</p>
+
+{% else %}
+<p class="safe">✔ Safe</p>
+{% endif %}
+
+<!-- BUTTONS -->
+
+<form action="/">
+<button>Check Another IP</button>
+</form>
+
+<br>
+
+<a href="/dashboard" style="color:#60a5fa;">View Dashboard</a>
+
+</div>
+
+</body>
+</html>
